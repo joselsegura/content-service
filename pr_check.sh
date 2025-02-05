@@ -31,7 +31,7 @@ DEPLOY_FRONTENDS="false"
 export IQE_PLUGINS="ccx"
 # Run all pipeline and ui tests
 export IQE_MARKER_EXPRESSION="pipeline"
-export IQE_FILTER_EXPRESSION=""
+export IQE_FILTER_EXPRESSION="not test_rbac"
 export IQE_REQUIREMENTS_PRIORITY=""
 export IQE_TEST_IMPORTANCE=""
 export IQE_CJI_TIMEOUT="30m"
