@@ -67,3 +67,13 @@ gotest:
     - git config --global --add safe.directory `pwd`
     - make test
     - ./check_coverage.sh
+
+openapi-check:
+  stage: test
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+
+  image: quay.io/sourcemation/openapi-generator-cli
+  script:
+    - openapi-generator-cli validate -i openapi.json
