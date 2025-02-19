@@ -19,10 +19,10 @@ Please try to follow [Style guideline for Go packages](https://rakyll.org/style-
 Before you submit your pull request consider the following guidelines:
 
 * Fork the repository and clone your fork
-  * open the following URL in your browser: <https://github.com/RedHatInsights/insights-content-service>
+  * open the following URL in your browser: <https://gitlab.cee.redhat.com/ccx/content-service>
   * click on the 'Fork' button (near the top right corner)
   * select the account for fork
-  * open your forked repository in browser: <https://github.com/YOUR_NAME/insights-content-service>
+  * open your forked repository in browser: <https://gitlab.cee.redhat.com/YOUR_NAME/content-service>
   * click on the 'Clone or download' button to get a command that can be used to clone the repository
 
 * Make your changes in a new git branch:
@@ -37,7 +37,7 @@ Before you submit your pull request consider the following guidelines:
   * Please make sure your tests pass!
   * Currently we use Travis CI for our automated testing.
 
-* Push your branch to GitHub:
+* Push your branch to GitLab:
 
   ```shell
   git push origin bug/my-fix-branch
@@ -49,7 +49,7 @@ Before you submit your pull request consider the following guidelines:
   * Make the required updates
   * Push changes to git (this will update your Pull Request):
     * You can add new commit
-    * Or rebase your branch and force push to your GitHub repository:
+    * Or rebase your branch and force push to your GitLab repository:
 
     ```shell
     git rebase -i master
