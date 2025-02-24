@@ -19,8 +19,8 @@ package types_test
 import (
 	"testing"
 
-	internal_types "github.com/RedHatInsights/insights-content-service/types"
 	"github.com/stretchr/testify/assert"
+	internal_types "gitlab.cee.redhat.com/ccx/content-service/types"
 )
 
 func TestToErrorKeyMetadata(t *testing.T) {

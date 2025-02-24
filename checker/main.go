@@ -22,8 +22,8 @@ import (
 	"github.com/RedHatInsights/insights-operator-utils/logger"
 	"github.com/rs/zerolog/log"
 
-	"github.com/RedHatInsights/insights-content-service/content"
-	"github.com/RedHatInsights/insights-content-service/groups"
+	"gitlab.cee.redhat.com/ccx/content-service/content"
+	"gitlab.cee.redhat.com/ccx/content-service/groups"
 )
 
 // groupConfigMap is a shorthand for the map used to store the group configuration.
