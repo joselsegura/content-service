@@ -21,7 +21,7 @@ import (
 
 	types "github.com/RedHatInsights/insights-results-types"
 
-	"github.com/RedHatInsights/insights-content-service/server"
+	"gitlab.cee.redhat.com/ccx/content-service/server"
 )
 
 // prepareStatusMap is a helper function to prepare map containing variour rule

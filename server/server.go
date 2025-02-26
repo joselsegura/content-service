@@ -29,8 +29,8 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/rs/zerolog/log"
 
-	"github.com/RedHatInsights/insights-content-service/content"
-	"github.com/RedHatInsights/insights-content-service/groups"
+	"gitlab.cee.redhat.com/ccx/content-service/content"
+	"gitlab.cee.redhat.com/ccx/content-service/groups"
 )
 
 const (

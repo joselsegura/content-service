@@ -28,10 +28,10 @@ import (
 	"github.com/RedHatInsights/insights-operator-utils/metrics"
 	"github.com/rs/zerolog/log"
 
-	"github.com/RedHatInsights/insights-content-service/conf"
-	"github.com/RedHatInsights/insights-content-service/content"
-	"github.com/RedHatInsights/insights-content-service/groups"
-	"github.com/RedHatInsights/insights-content-service/server"
+	"gitlab.cee.redhat.com/ccx/content-service/conf"
+	"gitlab.cee.redhat.com/ccx/content-service/content"
+	"gitlab.cee.redhat.com/ccx/content-service/groups"
+	"gitlab.cee.redhat.com/ccx/content-service/server"
 )
 
 // ExitCode represents numeric value returned to parent process when the
