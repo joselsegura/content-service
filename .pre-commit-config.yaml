@@ -17,14 +17,11 @@
 exclude: "doc|research|demos"
 
 repos:
-  - repo: https://github.com/Bahjat/pre-commit-golang
-    rev: v1.0.2
+  - repo: https://github.com/golangci/golangci-lint
+    rev: v2.1.6
     hooks:
-      - id: go-fmt-import
-      - id: go-vet
-      - id: go-lint
-      - id: go-unit-tests
-      - id: go-err-check
+      - id: golangci-lint-full
+      - id: golangci-lint-config-verify
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
