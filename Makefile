@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-.PHONY: default clean build fmt lint vet cyclo ineffassign shellcheck errcheck goconst gosec abcgo json-check style run test cover license openapi-check before_commit help godoc install_docgo install_addlicense
+.PHONY: default clean build fmt lint shellcheck abcgo json-check style run test cover license openapi-check before_commit help godoc install_docgo install_addlicense
 
 SOURCES:=$(shell find . -name '*.go')
 BINARY:=insights-content-service
@@ -25,40 +25,19 @@ checker/checker: checker/main.go
 	go build
 	cd ..
 
-fmt: ## Run go fmt -w for all sources
+install_golangci-lint:
+	go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@latest
+
+fmt: install_golangci-lint ## Run go formatting
 	@echo "Running go formatting"
-	./gofmt.sh
+	golangci-lint fmt
 
-lint: ## Run golint
-	@echo "Running go lint"
-	./golint.sh
-
-vet: ## Run go vet. Report likely mistakes in source code
-	@echo "Running go vet"
-	./govet.sh
-
-gocyclo: ## Run gocyclo
-	@echo "Running gocyclo"
-	./gocyclo.sh
-
-ineffassign: ## Run ineffassign checker
-	@echo "Running ineffassign checker"
-	./ineffassign.sh
+lint: install_golangci-lint ## Run go liting
+	@echo "Running go linting"
+	golangci-lint run --fix
 
 shellcheck: ## Run shellcheck
 	./shellcheck.sh
-
-errcheck: ## Run errcheck
-	@echo "Running errcheck"
-	./goerrcheck.sh
-
-goconst: ## Run goconst checker
-	@echo "Running goconst checker"
-	./goconst.sh
-
-gosec: ## Run gosec checker
-	@echo "Running gosec checker"
-	./gosec.sh
 
 abcgo: ## Run ABC metrics checker
 	@echo "Run ABC metrics checker"
@@ -71,7 +50,7 @@ json-check: ## Check all JSONs for basic syntax
 openapi-check:
 	./check_openapi.sh
 
-style: fmt vet lint cyclo shellcheck errcheck goconst gosec ineffassign abcgo ## Run all the formatting related commands (fmt, vet, lint, cyclo) + check shell scripts
+style: fmt lint shellcheck abcgo ## Run all the formatting related commands (fmt, vet, lint, cyclo) + check shell scripts
 
 run: clean build ## Build the project and executes the binary
 	./insights-content-service

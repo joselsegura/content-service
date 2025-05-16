@@ -8,19 +8,15 @@ stages:
   - test
   - docs
 
-golint:
+golint-abcgo:
   stage: lint
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
 
-  parallel:
-    matrix:
-      - LINT_TARGET: ["fmt", "lint", "vet", "gocyclo", "goconst", "gosec", "abcgo"]
-
   image: quay.io/projectquay/golang:1.23
   script:
-    - make ${LINT_TARGET}
+    - make abcgo
 
 shellcheck:
   stage: lint
