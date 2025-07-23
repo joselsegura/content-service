@@ -113,6 +113,9 @@ bdd-tests:
     - job: get-rules
       artifacts: true
 
+  tags:
+    - shared-podman-debug
+
 get-rules:
   stage: test
   rules:
