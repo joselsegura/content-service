@@ -1,0 +1,14 @@
+name: BDD tests
+
+
+on:
+  push:
+    # branches: ["main"]
+  pull_request:
+
+jobs:
+  bdd:
+    name: BDD tests
+    uses: joselsegura/processing-tools/.github/workflows/bdd.yml@bdd-notification-service
+    with:
+      service: content-service
